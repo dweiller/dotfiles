@@ -1,0 +1,2 @@
+[alias]
+	ga = log --oneline --decorate --graph --all
