@@ -153,3 +153,4 @@ if [ -f ~/.bash_functions ] ; then
 fi
 
 export EDITOR="vim"
+set -o vi
