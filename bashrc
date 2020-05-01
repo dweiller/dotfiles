@@ -95,6 +95,9 @@ add_venv_info () {
 }
 
 if [ -f ~/.bash_git-prompt ]; then
+    GIT_PS1_SHOWCOLORHINTS=true
+    GIT_PS1_SHOWDIRTYSTATE=true
+    GIT_PS1_SHOWSTASHSTATE=true
     source ~/.bash_git-prompt
     old_ps1_prefix=${PS1%'\$ '}
     PROMPT_COMMAND="__git_ps1 \"\$(add_venv_info '$old_ps1_prefix')\" '\\$ '"
