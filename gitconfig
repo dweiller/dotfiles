@@ -1,2 +1,4 @@
 [alias]
 	ga = log --oneline --decorate --graph --all
+[core]
+	autocrlf = input
