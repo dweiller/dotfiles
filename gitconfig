@@ -1,4 +1,6 @@
 [alias]
 	ga = log --oneline --decorate --graph --all
+[submodule]
+	recurse = true
 [core]
 	autocrlf = input
