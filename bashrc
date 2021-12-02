@@ -155,5 +155,5 @@ if [ -f ~/.bash_functions ] ; then
     . ~/.bash_functions
 fi
 
-export EDITOR="vim"
+export EDITOR="nvim"
 set -o vi
