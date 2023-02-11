@@ -167,3 +167,5 @@ export EDITOR="nvim"
 set -o vi
 
 export ZETTELKASTEN_ROOT=~/Documents/zettelkasten
+
+. "$HOME/.cargo/env"
