@@ -17,15 +17,4 @@ if status is-interactive
     abbr -a gsw git switch
     abbr -a glg git ga
 
-    set -g __fish_git_prompt_char_dirtystate •
-    set -g __fish_git_prompt_char_upstream_ahead "↑ "
-    set -g __fish_git_prompt_char_upstream_behind "↓ "
-    set -g __fish_git_prompt_char_upstream_equal
-
-    set -g __fish_git_prompt_showdirtystate true
-    set -g __fish_git_prompt_showupstream verbose
-
-    set -g __fish_git_prompt_showcolorhints true
-    set -g __fish_git_prompt_color_merging yellow
-    set -g __fish_git_prompt_color_upstream magenta
 end
