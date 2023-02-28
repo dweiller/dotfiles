@@ -1,5 +1,5 @@
 function __fish_zig_complete_build_steps
-    set -l lines (zig build --help 2>/dev/null | grep "^  [a-zA-Z]")
+    set -l lines (zig build --list-steps 2>/dev/null | grep "^  [a-zA-Z]")
     if [ $status -eq 0 ]
         for line in $lines
             set -l step (string split -n -f1 " " $line)
@@ -29,16 +29,26 @@ function __fish_zig_build_in_build_command
 end
 
 function __fish_zig_at_option_value
-    commandline -t | string match -r -- "-D[^ ]="
+    commandline -t | string match -r -- "-D[^ ]+="
 end
 
 function __fish_zig_complete_option_value
     echo true\nfalse
 end
 
-set -l all_commands build init-exe init-lib ast-check build-exe build-lib build-obj fmt run test translate-c ar cc c++ dlltool lib ranlib env help libc targets version zen
+function __fish_zig_complete_commands
+    set -l lines (zig help 2>/dev/null | grep "^  [a-z]")
+    if [ $status -eq 0 ]
+        for line in $lines
+            echo (string split -n -f1 -f2 -m3 " " $line | string join \t)
+        end
+    end
+end
 
-complete -f -k -c zig -c zigz -n "not __fish_seen_subcommand_from $all_commands" -a "$all_commands"
+set -l all_commands (__fish_zig_complete_commands)
+
+complete -f -k -c zig -c zigz -n "not __fish_seen_subcommand_from $all_commands" -a "(__fish_zig_complete_commands)"
+complete -f -k -c zig -c zigz -l "help" -s "h"
 
 complete -f -k -c zig -c zigz -n "__fish_zig_build_in_build_command" -a "(__fish_zig_complete_build_steps)"
 
