@@ -168,4 +168,4 @@ set -o vi
 
 export ZETTELKASTEN_ROOT=~/Documents/zettelkasten
 
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
