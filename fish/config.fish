@@ -16,5 +16,6 @@ if status is-interactive
     abbr -a gap git add --patch
     abbr -a gsw git switch
     abbr -a glg git ga
+    abbr -a gds git diff --staged
 
 end
