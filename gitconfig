@@ -4,3 +4,7 @@
 	recurse = true
 [core]
 	autocrlf = input
+[merge]
+	conflictStyle = diff3
+[init]
+	defaultBranch = main
