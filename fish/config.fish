@@ -6,9 +6,12 @@ if status is-interactive
     bind -M insert \cR history-pager
     bind -M insert \cS pager-toggle-search
     bind -M insert \cE edit_command_buffer
+    bind -M insert \cl forward-bigword
 
     abbr -a bat batcat
     abbr -a fd fdfind
+    abbr -a zb zig build
+
     abbr -a gs git status
     abbr -a ga git add
     abbr -a gd git diff
@@ -17,5 +20,7 @@ if status is-interactive
     abbr -a gsw git switch
     abbr -a glg git ga
     abbr -a gds git diff --staged
+    abbr -a gco git checkout
 
+    abbr -a ntd nvim TODO
 end
