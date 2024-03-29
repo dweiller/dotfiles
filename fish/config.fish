@@ -23,4 +23,8 @@ if status is-interactive
     abbr -a gco git checkout
 
     abbr -a ntd nvim TODO
+
+    if command -q zoxide
+        zoxide init fish --cmd cd | source
+    end
 end
