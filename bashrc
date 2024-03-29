@@ -157,8 +157,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
-
 if [ -f ~/.bash_functions ] ; then
     . ~/.bash_functions
 fi
@@ -169,3 +167,5 @@ set -o vi
 export ZETTELKASTEN_ROOT=~/Documents/zettelkasten
 
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
