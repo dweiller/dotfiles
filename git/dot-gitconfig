@@ -4,6 +4,8 @@
 	recurse = true
 [core]
 	autocrlf = input
+[fetch]
+	prune = true
 [merge]
 	conflictStyle = diff3
 [init]
