@@ -21,6 +21,8 @@ if status is-interactive
     abbr -a glg git ga
     abbr -a gds git diff --staged
     abbr -a gco git checkout
+    abbr -a gca git commit --amend
+    abbr -a gcm git commit -m
 
     abbr -a ntd nvim TODO
 
