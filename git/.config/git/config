@@ -10,3 +10,5 @@
 	conflictStyle = diff3
 [init]
 	defaultBranch = main
+[include]
+	path = ./private-config
