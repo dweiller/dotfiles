@@ -8,8 +8,6 @@ if status is-interactive
     bind -M insert \cE edit_command_buffer
     bind -M insert \cl forward-bigword
 
-    abbr -a bat batcat
-    abbr -a fd fdfind
     abbr -a zb zig build
 
     abbr -a gs git status
@@ -25,6 +23,14 @@ if status is-interactive
     abbr -a gcm git commit -m
 
     abbr -a ntd nvim TODO
+
+    if command -q batcat
+        abbr -a bat batcat
+    end
+
+    if command -q fdfind
+        abbr -a fd fdfind
+    end
 
     if command -q zoxide
         zoxide init fish --cmd cd | source
