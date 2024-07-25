@@ -12,3 +12,7 @@
 	defaultBranch = main
 [include]
 	path = ./private-config
+[branch]
+	sort = -committerdate
+[column]
+	ui = auto
