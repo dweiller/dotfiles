@@ -40,21 +40,21 @@ function __fish_zig_complete_commands
     set -l lines (zig help 2>/dev/null | grep "^  [a-z]")
     if [ $status -eq 0 ]
         for line in $lines
-            echo (string split -n -f1 -f2 -m3 " " $line | string join \t)
+            echo (string split -n -f 1,2 -m3 " " $line | string join \t)
         end
     end
 end
 
 set -l all_commands (__fish_zig_complete_commands)
 
-complete -f -k -c zig -c zigz -n "not __fish_seen_subcommand_from $all_commands" -a "(__fish_zig_complete_commands)"
-complete -f -k -c zig -c zigz -l "help" -s "h"
+complete -f -k -c zig -n "not __fish_seen_subcommand_from $all_commands" -a "(__fish_zig_complete_commands)"
+complete -f -k -c zig -l "help" -s "h"
 
-complete -f -k -c zig -c zigz -n "__fish_zig_build_in_build_command" -a "(__fish_zig_complete_build_steps)"
+complete -f -k -c zig -n "__fish_zig_build_in_build_command" -a "(__fish_zig_complete_build_steps)"
 
-complete -f -c zig -c zigz -n "__fish_zig_build_in_build_command ;and __fish_zig_build_in_project_option (commandline -ct)" \
+complete -f -c zig -n "__fish_zig_build_in_build_command ;and __fish_zig_build_in_project_option (commandline -ct)" \
 -a "(__fish_zig_complete_project_options)"
 
-complete -f -c zig -c zigz -n "__fish_zig_at_option_value" -a "true"
+complete -f -c zig -n "__fish_zig_at_option_value" -a "true"
 
-complete -F -c zig -c zigz -n "__fish_seen_subcommand_from \"--\""
+complete -F -c zig -n "__fish_seen_subcommand_from \"--\""

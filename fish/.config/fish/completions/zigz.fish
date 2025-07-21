@@ -1,1 +1,0 @@
-/home/dominic/.config/fish/completions/zig.fish
