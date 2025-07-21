@@ -1,13 +1,32 @@
 [alias]
+	og = log --oneline --decorate --graph
 	ga = log --oneline --decorate --graph --all
 [submodule]
 	recurse = true
 [core]
 	autocrlf = input
+[push]
+	autoSetupRemote = true
 [fetch]
 	prune = true
+	all = true
 [merge]
 	conflictStyle = diff3
+	tool = nvimdiff
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[commit]
+	verbose = true
+[diff]
+	algorithm = histogram
+	colorMoved = true
+	mnemonicPrefix = true
+[tag]
+	sort = version:refname
+[help]
+	autocorrect = prompt
 [init]
 	defaultBranch = main
 [include]
